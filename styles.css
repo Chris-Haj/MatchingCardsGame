@@ -12,6 +12,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #42055e;
 }
 
 .AllCards{
@@ -29,7 +30,6 @@ body{
 }
 
 .OneCard{
-    cursor: pointer;
     margin: auto;
     border-radius: 10px;
     background-color: rgb(154, 14, 147);
@@ -39,10 +39,8 @@ body{
     width: 150px;
     height: 150px;
     perspective: 1000px;
-    transform: rotate(calc(360deg *60));
-    transition: transform 20s;
-}
 
+}
 
 .OneCard .Front {
     position: absolute;
@@ -57,11 +55,11 @@ body{
     transition: transform 0.5s;
 }
 
-.OneCard:hover .Front {
+.OneCard.flipped .Front {
     transform: rotateY(180deg);
 }
 
-.OneCard:hover .Back {
+.OneCard.flipped .Back {
     transform: rotateY(0deg);
 }
 

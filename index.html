@@ -3,17 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <title>MatchingCardsGame</title>
+<!--    <meta name="viewport" content="width=device-width, initial-scale:1.0">-->
     <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<script src="scripts.js" defer> </script>
+<script src="scripts.js" defer></script>
 <body>
-
+<div class="Stats">
+    <button type="button" onclick="resetGame()" style="text-align: center; font-size: xxx-large">New Game</button>
+</div>
 <div class="GameContainer">
 
-    <img>
-
+    <ul class="AllCards">
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image1.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image2.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image3.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image4.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image5.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image6.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image7.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image8.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image9.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image10.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image11.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image12.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image13.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image14.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image15.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image1.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image2.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image3.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image4.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image5.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image6.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image7.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image8.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image9.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image10.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image11.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image12.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image13.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image14.png"></div>
+        </li>
+        <li class="OneCard">
+            <div class="Front"><img alt="Question Mark" src="Images/question-mark.png"></div>
+            <div class="Back"><img alt="image" src="Images/image15.png"></div>
+        </li>
+    </ul>
 </div>
-
-
 </body>
 </html>
