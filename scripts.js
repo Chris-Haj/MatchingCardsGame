@@ -1,8 +1,10 @@
 let cards = document.querySelectorAll(".OneCard");
+let SIZE = cards.length;
+shuffle();
 
 let firstCard, secondCard, matchCount = 0;
 let lockBoard = false;
-
+let moves = 1 , wins = 0;
 cards.forEach(card => {
     card.addEventListener("click", flip);
 });
@@ -10,6 +12,9 @@ cards.forEach(card => {
 function flip(event) {
     if (lockBoard) return;
     let clicked = event.target;
+    console.log(clicked.tagName);
+    document.getElementById('moves').innerHTML = 'Moves = ' + ++moves;
+
     if (clicked === firstCard) return;
     clicked.classList.add("flipped");
     if (!firstCard){
@@ -28,6 +33,8 @@ function checkForMatch() {
         disableCards();
         if (matchCount === (cards.length / 2)) {
             alert("You Win!");
+            wins++;
+            document.getElementById('wins').innerHTML = 'Wins = ' + wins;
             resetGame();
         }
     } else {
@@ -59,21 +66,21 @@ function resetGame() {
     matchCount = 0;
     resetBoard();
     // Shuffle cards
-    cards = shuffle(cards);
     cards.forEach((card, index) => {
-        card.style.order = index;
         card.classList.remove("flipped");
         card.addEventListener("click", flip);
     });
+    moves = 0;
+    document.getElementById('moves').innerHTML = 'Moves = ' + moves;
+    shuffle();
 }
 
 
 // Shuffle function
-function shuffle(array) {
+function shuffle() {
+    let array = document.querySelectorAll(".Back img");
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        [array[i].src, array[j].src] = [array[j].src, array[i].src];
     }
-    return array;
 }
-
