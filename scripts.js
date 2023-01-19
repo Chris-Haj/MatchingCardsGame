@@ -4,7 +4,7 @@ shuffle();
 
 let firstCard, secondCard, matchCount = 0;
 let lockBoard = false;
-let moves = 1 , wins = 0;
+let moves = 0, wins = 0;
 cards.forEach(card => {
     card.addEventListener("click", flip);
 });
@@ -14,10 +14,9 @@ function flip(event) {
     let clicked = event.target;
     console.log(clicked.tagName);
     document.getElementById('moves').innerHTML = 'Moves = ' + ++moves;
-
     if (clicked === firstCard) return;
     clicked.classList.add("flipped");
-    if (!firstCard){
+    if (!firstCard) {
         firstCard = clicked;
         return;
     }
@@ -50,6 +49,7 @@ function disableCards() {
 
 function unFlipCards() {
     lockBoard = true;
+
     setTimeout(() => {
         firstCard.classList.remove("flipped");
         secondCard.classList.remove("flipped");
@@ -66,11 +66,15 @@ function resetGame() {
     matchCount = 0;
     resetBoard();
     // Shuffle cards
-    cards.forEach((card, index) => {
+    cards.forEach((card) => {
         card.classList.remove("flipped");
         card.addEventListener("click", flip);
     });
     moves = 0;
+    if (wins === 1){
+        wins = 0;
+        document.getElementById('wins').innerHTML = 'Wins = ' + wins;
+    }
     document.getElementById('moves').innerHTML = 'Moves = ' + moves;
     shuffle();
 }

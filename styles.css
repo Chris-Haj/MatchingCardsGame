@@ -34,8 +34,9 @@ body {
     font-size: xx-large;
     border-radius: 10px 5px 10px 5px;
     padding: 10px;
+    color: white;
     background-color: #000000;
-    /*box-shadow: 0 0 10px 10px #1683e3;*/
+    box-shadow: 0 0 10px 10px #1683e3;
 }
 
 #item2{
