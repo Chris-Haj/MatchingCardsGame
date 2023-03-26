@@ -6,14 +6,16 @@ let firstCard, secondCard, matchCount = 0;
 let lockBoard = false;
 let moves = 0, wins = 0;
 cards.forEach(card => {
-    card.addEventListener("click", flip);
+    card.addEventListener("click", flip)
 });
 
 function flip(event) {
     if (lockBoard) return;
     let clicked = event.target;
     console.log(clicked.tagName);
-    document.getElementById('moves').innerHTML = 'Moves = ' + ++moves;
+    if(clicked.classList.contains("flipped") === false)
+        moves++;
+    document.getElementById('moves').innerHTML = 'Moves = ' + moves;
     if (clicked === firstCard) return;
     clicked.classList.add("flipped");
     if (!firstCard) {
@@ -37,7 +39,9 @@ function checkForMatch() {
             resetGame();
         }
     } else {
+
         unFlipCards();
+
     }
 }
 
@@ -49,14 +53,27 @@ function disableCards() {
 
 function unFlipCards() {
     lockBoard = true;
-
-    setTimeout(() => {
-        firstCard.classList.remove("flipped");
-        secondCard.classList.remove("flipped");
-        resetBoard();
-    }, 500);
+    firstCard.removeEventListener("click", flip);
+    secondCard.removeEventListener("click", flip);
+    document.body.addEventListener("click", unflip);
+    firstCard.addEventListener("click",flip);
+    secondCard.addEventListener("click",flip);
 }
 
+function unflip(event) {
+
+    if(event.target !== firstCard && event.target !== secondCard) {
+        firstCard.classList.remove("flipped");
+        secondCard.classList.remove("flipped");
+        event.target.classList.add("flipped");
+        resetBoard();
+        document.body.removeEventListener("click",unflip);
+        firstCard = event.target;
+        moves++;
+        document.getElementById('moves').innerHTML = 'Moves = ' + moves;
+
+    }
+}
 function resetBoard() {
     [firstCard, secondCard] = [null, null];
     lockBoard = false;
